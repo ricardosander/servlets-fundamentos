@@ -1,7 +1,6 @@
 package br.com.alura.gerenciador.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Collection;
 
 import javax.servlet.ServletException;
@@ -23,25 +22,7 @@ public class BuscaEmpresa extends HttpServlet {
 
 		EmpresaDAO empresaDAO = new EmpresaDAO();
 		Collection<Empresa> empresas = empresaDAO.buscaPorSimilaridade(filtro);
-
-		PrintWriter writer = resp.getWriter();
-
-		writer.println("<html>");
-		writer.println("<body>");
-		writer.println("Resultado da busca:<br/>");
-
-		writer.write("<ul>");
-
-		for (Empresa empresa : empresas) {
-
-			writer.write("<li>");
-			writer.write(empresa.getId() + ": " + empresa.getNome());
-			writer.write("</li>");
-		}
-
-		writer.write("</ul>");
-
-		writer.println("</body>");
-		writer.println("</html>");
+		req.setAttribute("empresas", empresas);
+		req.getRequestDispatcher("/WEB-INF/pages/buscaEmpresa.jsp").forward(req, resp);
 	}
 }

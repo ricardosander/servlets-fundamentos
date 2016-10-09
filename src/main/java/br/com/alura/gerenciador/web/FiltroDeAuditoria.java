@@ -29,7 +29,7 @@ public class FiltroDeAuditoria implements Filter {
 
 		HttpServletRequest req = (HttpServletRequest) request;
 
-		Usuario usuarioLogado = (Usuario) req.getSession().getAttribute("usuario.logado");
+		Usuario usuarioLogado = (Usuario) req.getSession().getAttribute("usuarioLogado");
 
 		String usuario = "<deslogado>";
 		if (usuarioLogado != null) {

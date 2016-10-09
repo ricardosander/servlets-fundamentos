@@ -20,7 +20,7 @@ public class Logout extends HttpServlet {
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario.logado");
 ;
 		if (usuario != null) {
-			req.getSession().removeAttribute("usuario.logado");
+			req.getSession().removeAttribute("usuarioLogado");
 		} 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/pages/logout.html");
 		dispatcher.forward(req, resp);
