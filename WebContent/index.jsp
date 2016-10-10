@@ -22,7 +22,8 @@ Bem vindo ao nosso gerenciador de empresas!<br/>
     <input type="submit" value="Enviar" />
 </form>
 
-<form action="logout" method="post">
+<form action="fazTudo" method="POST">
+	<input type="hidden" name="tarefa" value="Logout" />
     <input type="submit" value="Logout" />
 </form>
 </body>

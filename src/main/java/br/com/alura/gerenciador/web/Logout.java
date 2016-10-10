@@ -1,28 +1,18 @@
 package br.com.alura.gerenciador.web;
 
-import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.Usuario;
 
-@WebServlet(urlPatterns = "/logout")
-public class Logout extends HttpServlet {
+public class Logout implements Controller {
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) {
 
-		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario.logado");
-;
+		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario.logado");
 		if (usuario != null) {
-			req.getSession().removeAttribute("usuarioLogado");
+			request.getSession().removeAttribute("usuarioLogado");
 		} 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/pages/logout.html");
-		dispatcher.forward(req, resp);
+		return"WEB-INF/pages/logout.html";
 	}
 }
