@@ -11,7 +11,8 @@ Bem vindo ao nosso gerenciador de empresas!<br/>
 </c:if>
 
 
-<form action="novaEmpresa" method="post">
+<form action="fazTudo" method="POST">
+	<input type="hidden" name="tarefa" value="NovaEmpresa" />
     Nome: <input type="text" name="nome" /><br />
     <input type="submit" value="Enviar" />
 </form>
