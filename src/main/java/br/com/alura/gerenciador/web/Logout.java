@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.Usuario;
 
-public class Logout implements Controller {
+public class Logout implements Model {
 
 	public String executa(HttpServletRequest request, HttpServletResponse response) {
 
-		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario.logado");
+		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
 		if (usuario != null) {
 			request.getSession().removeAttribute("usuarioLogado");
 		} 
