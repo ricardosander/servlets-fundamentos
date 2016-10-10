@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.Empresa;
 import br.com.alura.gerenciador.dao.EmpresaDAO;
 
-public class NovaEmpresa implements Controller {
+public class NovaEmpresa implements Model {
 
 	public String executa(HttpServletRequest request, HttpServletResponse response) {
 

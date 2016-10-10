@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns="/fazTudo")
-public class Route extends HttpServlet {
+@WebServlet(urlPatterns="/executa")
+public class Controller extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException {
@@ -22,7 +22,7 @@ public class Route extends HttpServlet {
 		try {
 			
 			Class<?> type = Class.forName(nomeDaClasse);
-			Controller controller = (Controller) type.newInstance();
+			Model controller = (Model) type.newInstance();
 			String pagina = controller.executa(request, response);
 			request.getRequestDispatcher(pagina).forward(request, response);
 			

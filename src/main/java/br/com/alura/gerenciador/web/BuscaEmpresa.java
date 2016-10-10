@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.Empresa;
 import br.com.alura.gerenciador.dao.EmpresaDAO;
 
-public class BuscaEmpresa implements Controller {
+public class BuscaEmpresa implements Model {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) {

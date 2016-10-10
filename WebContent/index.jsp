@@ -11,7 +11,7 @@ Bem vindo ao nosso gerenciador de empresas!<br/>
 </c:if>
 
 
-<form action="fazTudo" method="POST">
+<form action="executa" method="POST">
 	<input type="hidden" name="tarefa" value="NovaEmpresa" />
     Nome: <input type="text" name="nome" /><br />
     <input type="submit" value="Enviar" />
@@ -23,7 +23,7 @@ Bem vindo ao nosso gerenciador de empresas!<br/>
     <input type="submit" value="Enviar" />
 </form>
 
-<form action="fazTudo" method="POST">
+<form action="executa" method="POST">
 	<input type="hidden" name="tarefa" value="Logout" />
     <input type="submit" value="Logout" />
 </form>
