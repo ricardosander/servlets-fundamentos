@@ -16,6 +16,6 @@ public class NovaEmpresa implements Model {
 		new EmpresaDAO().adiciona(empresa);
 
 		request.setAttribute("nomeNovaEmpresa", nomeEmpresa);
-		return "WEB-INF/pages/novaEmpresa.jsp";
+		return "/WEB-INF/pages/novaEmpresa.jsp";
 	}
 }

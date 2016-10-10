@@ -13,6 +13,6 @@ public class Logout implements Model {
 		if (usuario != null) {
 			request.getSession().removeAttribute("usuarioLogado");
 		} 
-		return"WEB-INF/pages/logout.html";
+		return"/WEB-INF/pages/logout.html";
 	}
 }
